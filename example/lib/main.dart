@@ -5,14 +5,9 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,15 +18,19 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              title('empty'),
+              // Empty
+              title('empty', false),
               DView.empty(),
-              DView.empty("There's no data"),
+              DView.empty("Belum ada data"),
+              // Error
               title('error'),
               DView.error(),
-              DView.error("Something wrong"),
-              title('Loading'),
+              DView.error("Terjadi kesalahan"),
+              // Loading
+              title('loading'),
               DView.loadingBar(),
               DView.loadingCircle(),
+              // Space
               title('space'),
               Column(
                 children: [
@@ -42,6 +41,7 @@ class _MyAppState extends State<MyApp> {
                   Text('c' * 9),
                 ],
               ),
+              const Divider(),
               Row(
                 children: [
                   Text('d' * 9),
@@ -51,6 +51,27 @@ class _MyAppState extends State<MyApp> {
                   Text('f' * 9),
                 ],
               ),
+              const Divider(),
+              Column(
+                children: [
+                  Container(height: 30, width: 60, color: Colors.blue),
+                  DView.spaceHeight(),
+                  Container(height: 30, width: 60, color: Colors.blue),
+                  DView.spaceHeight(4),
+                  Container(height: 30, width: 60, color: Colors.blue),
+                ],
+              ),
+
+              const Divider(),
+              Row(
+                children: [
+                  Container(height: 30, width: 60, color: Colors.blue),
+                  DView.spaceWidth(),
+                  Container(height: 30, width: 60, color: Colors.blue),
+                  DView.spaceWidth(50),
+                  Container(height: 30, width: 60, color: Colors.blue),
+                ],
+              ),
               title('textTitle'),
               DView.textTitle("Text Title"),
               title('textAction'),
@@ -58,22 +79,32 @@ class _MyAppState extends State<MyApp> {
                 () {
                   print('click See All 1');
                 },
-                'See All',
                 color: Colors.amber,
               ),
               DView.textAction(
                 () {
                   print('click See All 2');
                 },
-                'See All',
-                size: 18,
-              ),
-              DView.textAction(
-                () {
-                  print('click lihat semua 3');
-                },
-                'See All',
+                text: 'SEMUA',
+                size: 20,
                 iconRight: Icons.navigate_next,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    DView.textTitle("Popular", color: Colors.black, size: 22),
+                    DView.textAction(
+                      () {
+                        print('More click');
+                      },
+                      size: 18,
+                      text: 'More',
+                      iconRight: Icons.navigate_next,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -82,10 +113,10 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget title(String title) {
+  Widget title(String title, [bool space = true]) {
     return Column(
       children: [
-        const SizedBox(height: 16),
+        if (space) const SizedBox(height: 16),
         ListTile(
           title: Text(title),
           tileColor: Colors.grey[300],
