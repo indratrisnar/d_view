@@ -3,7 +3,8 @@
 D'View is a package that provides wigdet for response and other basic needs in a concise way.
 
 ## Screenshot
-<img src="https://github.com/indratrisnar/d_view/raw/master/pic/dview_1.png" alt="dview_1" height="540">
+<img src="https://github.com/indratrisnar/d_view/raw/master/pic/d_view1.png" alt="dview_1" height="540">
+<img src="https://github.com/indratrisnar/d_view/raw/master/pic/d_view2.png" alt="dview_2" height="540">
 
 ## Usage
 
@@ -14,7 +15,6 @@ DView.error(),
 DView.loadingBar(),
 DView.loadingCircle(),
 ```
-
 
 2. Box
 spaceHeight() inside Column
@@ -29,9 +29,10 @@ DView.spaceWidth(8),
 DView.textTitle("D'View"),
 DView.textAction(
     () {
-        print('click See All');
+        print('click See All 2');
     },
-    'See All',
+    text: 'SEMUA',
+    size: 20,
     iconRight: Icons.navigate_next,
 ),
 ```
