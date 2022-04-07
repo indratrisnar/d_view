@@ -38,7 +38,7 @@ DView.textAction(
 ```
 
 # Tutorial :
-Soon
+[Watch](https://www.youtube.com/watch?v=ElfN1Fn8v3U)
 
 Support me for more feature & packages
 [Donate](https://www.paypal.com/paypalme/indratrisnar)
