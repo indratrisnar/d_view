@@ -35,6 +35,10 @@ class DView {
     return Center(child: Text(data));
   }
 
+  /// response for nothing widget
+  /// usually used for checking like visibility off
+  static Widget nothing() => const SizedBox();
+
   /// response for loading circle, default align t center
   static Widget loadingCircle() {
     return const Center(child: CircularProgressIndicator());

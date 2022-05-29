@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
               // Empty
               title('empty', false),
               DView.empty(),
+              DView.nothing(), // box with empty size
               DView.empty("Belum ada data"),
               // Error
+              DView.nothing(), // box with empty size
               title('error'),
               DView.error(),
               DView.error("Terjadi kesalahan"),
