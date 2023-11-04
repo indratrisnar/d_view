@@ -1,3 +1,10 @@
+## 0.0.4
+
+- update dependency and src
+- new method `height` and `width`
+- Deprecated: `spaceHeight` and `spaceWidth`
+- set default size for space: `defaultSpace`
+
 ## 0.0.3
 
 Add nothing widget
@@ -8,4 +15,4 @@ Add tutorial
 
 ## 0.0.1
 
-* TODO: Describe initial release.
+- TODO: Describe initial release.

@@ -3,12 +3,14 @@
 D'View is a package that provides wigdet for response and other basic needs in a concise way.
 
 ## Screenshot
+
 <img src="https://github.com/indratrisnar/d_view/raw/master/pic/d_view1.png" alt="dview_1" height="540">
 <img src="https://github.com/indratrisnar/d_view/raw/master/pic/d_view2.png" alt="dview_2" height="540">
 
 ## Usage
 
 1. Response
+
 ```dart
 DView.empty(),
 DView.error(),
@@ -16,15 +18,32 @@ DView.loadingBar(),
 DView.loadingCircle(),
 ```
 
-2. Box
+2. Space
+
+@Deprecated
 spaceHeight() inside Column
 spaceWidth() inside Row
+
 ```dart
 DView.spaceHeight(),
 DView.spaceWidth(8),
 ```
 
+Migarte to:
+
+height() inside Column
+width() inside Row
+
+with default size: defaultSpace, set this variable in `main` to set global space for height() and width() size.
+DView.defaultSpace = 20;
+
+```dart
+DView.height(),
+DView.width(8),
+```
+
 3. Text
+
 ```dart
 DView.textTitle("D'View"),
 DView.textAction(
@@ -38,6 +57,7 @@ DView.textAction(
 ```
 
 # Tutorial :
+
 [Watch](https://www.youtube.com/watch?v=ElfN1Fn8v3U)
 
 Support me for more feature & packages
