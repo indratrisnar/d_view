@@ -1,9 +1,12 @@
-## 0.0.4
+## 0.0.5
 
-- update dependency and src
 - new method `height` and `width`
 - Deprecated: `spaceHeight` and `spaceWidth`
 - set default size for space: `defaultSpace`
+
+## 0.0.4
+
+- update dependency and src
 
 ## 0.0.3
 

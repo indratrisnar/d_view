@@ -4,6 +4,14 @@ import 'package:flutter/material.dart';
 
 /// Widget for helping response and utility in Flutter
 class DView {
+  /// default size for space\
+  /// 16.0\
+  ///
+  /// Effect:
+  /// - height()
+  /// - width()
+  static double defaultSpace = 16.0;
+
   ///SimpleAppBar with left title
   static PreferredSizeWidget appBarLeft(String title) {
     return AppBar(
@@ -20,14 +28,36 @@ class DView {
     );
   }
 
+  @Deprecated('Please use DView.height()')
+
   /// space like sizedbox for height, default 16
   static Widget spaceHeight([double size = 16]) {
     return SizedBox(height: size);
   }
 
+  @Deprecated('Please use DView.width()')
+
   /// space like sizedbox for width, default 16
   static Widget spaceWidth([double size = 16]) {
     return SizedBox(width: size);
+  }
+
+  /// space like sizedbox for height,\
+  /// default: `DView.defaultSpace`
+  static Widget height([double? size]) {
+    double sizeX = size ?? defaultSpace;
+    return SizedBox(
+      height: sizeX.isNegative ? 0 : sizeX,
+    );
+  }
+
+  /// space like sizedbox for width,\
+  /// default: `DView.defaultSpace`
+  static Widget width([double? size]) {
+    double sizeX = size ?? defaultSpace;
+    return SizedBox(
+      width: sizeX.isNegative ? 0 : sizeX,
+    );
   }
 
   /// response for empty data
@@ -50,8 +80,11 @@ class DView {
   }
 
   /// response for error
-  static Widget error([String data = 'Something went wrong']) {
-    return Center(child: Text(data));
+  static Widget error({
+    String data = 'Something went wrong',
+    TextStyle? style,
+  }) {
+    return Center(child: Text(data, style: style));
   }
 
   /// text for title content
@@ -67,7 +100,7 @@ class DView {
         style: TextStyle(
           fontSize: size ?? 18,
           fontWeight: weight ?? FontWeight.bold,
-          color: color ?? Theme.of(context).primaryColor,
+          color: color ?? Theme.of(context).colorScheme.onBackground,
         ),
       );
     });

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               DView.nothing(), // box with empty size
               title('error'),
               DView.error(),
-              DView.error("Terjadi kesalahan"),
+              DView.error(data: "Terjadi kesalahan"),
               // Loading
               title('loading'),
               DView.loadingBar(),
